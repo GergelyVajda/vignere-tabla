@@ -17,21 +17,30 @@ public class KodolUj {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in,"windows-1252");
+        Scanner sc = new Scanner(System.in, "windows-1252");
         String nyilt;
         System.out.println("Kérem adjon meg egy maximum 255 karakter hosszúságú szöveget!");
-        nyilt=sc.nextLine();
-        nyilt=nyilt.toUpperCase();
-        char[] betuk=new char[nyilt.length()];
+        nyilt = sc.nextLine();
+        nyilt = nyilt.toUpperCase();
+        nyilt = nyilt.replace('Á', 'A');
+        nyilt = nyilt.replace('Ö', 'O');
+        nyilt = nyilt.replace('Ő', 'O');
+        nyilt = nyilt.replace('Ó', 'O');
+        nyilt = nyilt.replace('É', 'E');
+        nyilt = nyilt.replace('Í', 'I');
+        nyilt = nyilt.replace('Ü', 'U');
+        nyilt = nyilt.replace('Ű', 'U');
+        nyilt = nyilt.replace(" ", "");
+        nyilt = nyilt.replace(".", "");
+        nyilt = nyilt.replace(",", "");
+        nyilt = nyilt.replace(";", "");
+        nyilt = nyilt.replace("-", "");
+        nyilt = nyilt.replace("!", "");
+        nyilt = nyilt.replace("?", "");
+        nyilt = nyilt.replace("(", "");
+        nyilt = nyilt.replace(")", "");
         System.out.println(nyilt);
-        betuk=nyilt.toCharArray();
-        System.out.println(nyilt);
-        /*for (int i = 0; i < 255; i++) {
-            if (nyilt.charAt(i)) {
-                
-            }
-        }*/
-      
+
     }
-    
+
 }

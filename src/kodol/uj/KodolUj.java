@@ -39,7 +39,18 @@ public class KodolUj {
         nyilt = nyilt.replace("?", "");
         nyilt = nyilt.replace("(", "");
         nyilt = nyilt.replace(")", "");
+        nyilt = nyilt.replace("0", "");
+        nyilt = nyilt.replace("1", "");
+        nyilt = nyilt.replace("2", "");
+        nyilt = nyilt.replace("3", "");
+        nyilt = nyilt.replace("4", "");
+        nyilt = nyilt.replace("5", "");
+        nyilt = nyilt.replace("6", "");
+        nyilt = nyilt.replace("7", "");
+        nyilt = nyilt.replace("8", "");
+        nyilt = nyilt.replace("9", "");
         System.out.println(nyilt);
+        
 
     }
 

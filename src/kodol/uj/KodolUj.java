@@ -5,7 +5,13 @@
  */
 package kodol.uj;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -49,10 +55,13 @@ public class KodolUj {
         nyilt = nyilt.replace("7", "");
         nyilt = nyilt.replace("8", "");
         nyilt = nyilt.replace("9", "");
+        //3. feladat
         System.out.println(nyilt);
+        //4. feladat
         System.out.println("Kérem edjon meg egy max. 5 karakter hosszúságú, a kódolás feltételeinek megfelelő kulcsszót!");
         String kulcsszo=sc.nextLine();
         kulcsszo=kulcsszo.toUpperCase();
+        //5. feladat
         String kulcsszöveg=kulcsszo;
         for (int i = 0; i < 200; i++) {
             if (kulcsszöveg.length()==nyilt.length()) {
@@ -72,6 +81,23 @@ public class KodolUj {
             }
         }
         System.out.println(kulcsszöveg);
+        //6. feladat
+        try {
+            FileReader buta=new FileReader("vtabla.dat");
+            BufferedReader okos= new BufferedReader(buta);
+            char[][] tabla= new char[26][26];
+            for (int i = 0; i < 26; i++) {
+                String nyers=okos.readLine();
+                for (int j = 0; j < 26; j++) {
+                    tabla[i][j]=nyers.charAt(j);
+                }
+            }
+            
+        } catch (FileNotFoundException ex) {
+            System.out.println("Nem található a file!");
+        } catch (IOException ex) {
+            System.out.println("Hiba az olvasásánál!");
+        }
         
         
 

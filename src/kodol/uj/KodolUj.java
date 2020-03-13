@@ -50,6 +50,29 @@ public class KodolUj {
         nyilt = nyilt.replace("8", "");
         nyilt = nyilt.replace("9", "");
         System.out.println(nyilt);
+        System.out.println("Kérem edjon meg egy max. 5 karakter hosszúságú, a kódolás feltételeinek megfelelő kulcsszót!");
+        String kulcsszo=sc.nextLine();
+        kulcsszo=kulcsszo.toUpperCase();
+        String kulcsszöveg=kulcsszo;
+        for (int i = 0; i < 200; i++) {
+            if (kulcsszöveg.length()==nyilt.length()) {
+                break;
+            }else{
+                if (kulcsszöveg.length()>nyilt.length()) {
+                    for (int j = 0; j < 5; j++) {
+                        if (kulcsszöveg.length()==nyilt.length()) {
+                            break;
+                        }else{
+                        kulcsszöveg=kulcsszöveg.substring(0,kulcsszöveg.length()-1);
+                        }
+                    }
+                }else{
+                kulcsszöveg=kulcsszöveg.concat(kulcsszo);
+                }
+            }
+        }
+        System.out.println(kulcsszöveg);
+        
         
 
     }

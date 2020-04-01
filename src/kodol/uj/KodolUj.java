@@ -11,7 +11,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,7 +32,12 @@ public class KodolUj {
         System.out.println("Kérem adjon meg egy maximum 255 karakter hosszúságú szöveget!");
         nyilt = sc.nextLine();
         nyilt = nyilt.toUpperCase();
-        nyilt = nyilt.replace('Á', 'A');
+        Set jobetuk = new HashSet();
+        for (char i = 'A'; i <= 'Z'; i++) {
+            jobetuk.add(i);
+        }
+        
+        /*nyilt = nyilt.replace('Á', 'A');
         nyilt = nyilt.replace('Ö', 'O');
         nyilt = nyilt.replace('Ő', 'O');
         nyilt = nyilt.replace('Ó', 'O');
@@ -38,6 +45,7 @@ public class KodolUj {
         nyilt = nyilt.replace('Í', 'I');
         nyilt = nyilt.replace('Ü', 'U');
         nyilt = nyilt.replace('Ű', 'U');
+        nyilt = nyilt.replace('Ú', 'U');
         nyilt = nyilt.replace(" ", "");
         nyilt = nyilt.replace(".", "");
         nyilt = nyilt.replace(",", "");
@@ -94,6 +102,7 @@ public class KodolUj {
                     tabla[i][j] = nyers.charAt(j);
                 }
             }
+            
             Integer sor = 0;
             Integer oszlop = 0;
             Integer sorba=0;
@@ -124,7 +133,7 @@ public class KodolUj {
             System.out.println("Nem található a file!");
         } catch (IOException ex) {
             System.out.println("Hiba az olvasásánál!");
-        }
+        }*/
 
     }
 

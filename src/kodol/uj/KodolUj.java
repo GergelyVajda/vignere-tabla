@@ -32,14 +32,16 @@ public class KodolUj {
         System.out.println("Kérem adjon meg egy maximum 255 karakter hosszúságú szöveget!");
         nyilt = sc.nextLine();
         nyilt = nyilt.toUpperCase();
-        Set jobetuk = new HashSet();
+        
+        /*Set jobetuk = new HashSet();
         for (char i = 'A'; i <= 'Z'; i++) {
             jobetuk.add(i);
-        }
+        }*/
         
-        /*nyilt = nyilt.replace('Á', 'A');
+        nyilt = nyilt.replace('Á', 'A');
         nyilt = nyilt.replace('Ö', 'O');
         nyilt = nyilt.replace('Ő', 'O');
+        nyilt = nyilt.replace('Õ', 'O');
         nyilt = nyilt.replace('Ó', 'O');
         nyilt = nyilt.replace('É', 'E');
         nyilt = nyilt.replace('Í', 'I');
@@ -102,13 +104,13 @@ public class KodolUj {
                     tabla[i][j] = nyers.charAt(j);
                 }
             }
-            
             Integer sor = 0;
             Integer oszlop = 0;
-            Integer sorba=0;
+            int sorba=0;
             char[] kodolt=new char[nyilt.length()];
             for (int y = 0; y < 26; y++) {
                 for (int i = 0; i < 26; i++) {
+                    // itt mutatja, hogy valami nincs rendben. Tesztek utáni megfigyelés: mindig StringIndexOutOfBoundsException-t ad, HA a nyilt.length kisebb mind 26. Ha nagyobb, akkor nincs probléma.
                     if (nyilt.charAt(sorba) == tabla[i][0]) {
                         sor = i;
                     }
@@ -133,7 +135,7 @@ public class KodolUj {
             System.out.println("Nem található a file!");
         } catch (IOException ex) {
             System.out.println("Hiba az olvasásánál!");
-        }*/
+        }
 
     }
 

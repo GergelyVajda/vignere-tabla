@@ -14,8 +14,6 @@ import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -33,10 +31,29 @@ public class KodolUj {
         nyilt = sc.nextLine();
         nyilt = nyilt.toUpperCase();
         
-        /*Set jobetuk = new HashSet();
+        Set jobetuk = new HashSet();
         for (char i = 'A'; i <= 'Z'; i++) {
             jobetuk.add(i);
-        }*/
+        }
+        jobetuk.add('Á');
+        jobetuk.add('É');
+        jobetuk.add('Ő');
+        jobetuk.add('Ű');
+        jobetuk.add('Õ');
+        jobetuk.add('Ö');
+        jobetuk.add('Ü');
+        jobetuk.add('Ú');
+        jobetuk.add('Í');
+        jobetuk.add('Ó');
+        jobetuk.add(' ');
+        
+        for (int i = 0; i < nyilt.length(); i++) {
+            if (jobetuk.contains(nyilt.charAt(i))==true) {
+                i++;
+            }else{
+            nyilt=nyilt.replace(nyilt.charAt(i),' ');
+            }
+        }
         
         nyilt = nyilt.replace('Á', 'A');
         nyilt = nyilt.replace('Ö', 'O');
@@ -49,24 +66,7 @@ public class KodolUj {
         nyilt = nyilt.replace('Ű', 'U');
         nyilt = nyilt.replace('Ú', 'U');
         nyilt = nyilt.replace(" ", "");
-        nyilt = nyilt.replace(".", "");
-        nyilt = nyilt.replace(",", "");
-        nyilt = nyilt.replace(";", "");
-        nyilt = nyilt.replace("-", "");
-        nyilt = nyilt.replace("!", "");
-        nyilt = nyilt.replace("?", "");
-        nyilt = nyilt.replace("(", "");
-        nyilt = nyilt.replace(")", "");
-        nyilt = nyilt.replace("0", "");
-        nyilt = nyilt.replace("1", "");
-        nyilt = nyilt.replace("2", "");
-        nyilt = nyilt.replace("3", "");
-        nyilt = nyilt.replace("4", "");
-        nyilt = nyilt.replace("5", "");
-        nyilt = nyilt.replace("6", "");
-        nyilt = nyilt.replace("7", "");
-        nyilt = nyilt.replace("8", "");
-        nyilt = nyilt.replace("9", "");
+
         //3. feladat
         System.out.println(nyilt);
         //4. feladat

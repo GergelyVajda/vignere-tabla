@@ -44,14 +44,15 @@ public class KodolUj {
         jobetuk.add('Ü');
         jobetuk.add('Ú');
         jobetuk.add('Í');
+        jobetuk.add('Û');
         jobetuk.add('Ó');
         jobetuk.add(' ');
         
         for (int i = 0; i < nyilt.length(); i++) {
             if (jobetuk.contains(nyilt.charAt(i))==true) {
-                i++;
             }else{
             nyilt=nyilt.replace(nyilt.charAt(i),' ');
+            
             }
         }
         
@@ -65,6 +66,7 @@ public class KodolUj {
         nyilt = nyilt.replace('Ü', 'U');
         nyilt = nyilt.replace('Ű', 'U');
         nyilt = nyilt.replace('Ú', 'U');
+        nyilt = nyilt.replace('Û', 'U');
         nyilt = nyilt.replace(" ", "");
 
         //3. feladat
